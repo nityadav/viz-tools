@@ -1,75 +1,197 @@
 // ================= sample data =============== //
 var sentence_example = [
    {
-      "span":"I",
+      "span":"I want adobo . Is there a Filipino place open late at 9pm or later near Oakland ?",
       "className":"token",
-      "children":[
-
-      ]
-   },
-   {
-      "span":"want",
-      "className":"token",
-      "children":[
-
-      ]
-   },
-   {
-      "span":"to",
-      "className":"token",
-      "children":[
-
-      ]
-   },
-   {
-      "span":"buy",
-      "className":"token",
-      "children":[
-
-      ]
-   },
-   {
-      "span":"wine that goes well with lasagne",
-      "className":"product",
       "children":[
          {
-            "span":"wine",
-            "className":"product",
-            "children":[
-
-            ]
-         },
-         {
-            "span":"that",
+            "span":"I",
             "className":"token",
             "children":[
 
             ]
          },
          {
-            "span":"goes",
+            "span":"want adobo . Is there a Filipino place open late at 9pm or later near Oakland",
             "className":"token",
             "children":[
+               {
+                  "span":"want",
+                  "className":"token",
+                  "children":[
 
+                  ]
+               },
+               {
+                  "span":"adobo . Is there a Filipino place open late at 9pm or later near Oakland",
+                  "className":"token",
+                  "children":[
+                     {
+                        "span":"adobo .",
+                        "className":"token",
+                        "children":[
+                           {
+                              "span":"adobo",
+                              "className":"R.dish",
+                              "children":[
+
+                              ]
+                           },
+                           {
+                              "span":".",
+                              "className":"token",
+                              "children":[
+
+                              ]
+                           }
+                        ]
+                     },
+                     {
+                        "span":"Is there a Filipino place open late at 9pm or later near Oakland",
+                        "className":"token",
+                        "children":[
+                           {
+                              "span":"Is there a Filipino place open late at 9pm",
+                              "className":"token",
+                              "children":[
+                                 {
+                                    "span":"Is there a Filipino place",
+                                    "className":"token",
+                                    "children":[
+                                       {
+                                          "span":"Is",
+                                          "className":"token",
+                                          "children":[
+
+                                          ]
+                                       },
+                                       {
+                                          "span":"there",
+                                          "className":"token",
+                                          "children":[
+
+                                          ]
+                                       },
+                                       {
+                                          "span":"a Filipino place",
+                                          "className":"token",
+                                          "children":[
+                                             {
+                                                "span":"a",
+                                                "className":"token",
+                                                "children":[
+
+                                                ]
+                                             },
+                                             {
+                                                "span":"Filipino",
+                                                "className":"R.cuisine",
+                                                "children":[
+
+                                                ]
+                                             },
+                                             {
+                                                "span":"place",
+                                                "className":"token",
+                                                "children":[
+
+                                                ]
+                                             }
+                                          ]
+                                       }
+                                    ]
+                                 },
+                                 {
+                                    "span":"open late at 9pm",
+                                    "className":"token",
+                                    "children":[
+                                       {
+                                          "span":"open",
+                                          "className":"token",
+                                          "children":[
+
+                                          ]
+                                       },
+                                       {
+                                          "span":"late at 9pm",
+                                          "className":"token",
+                                          "children":[
+                                             {
+                                                "span":"late",
+                                                "className":"token",
+                                                "children":[
+
+                                                ]
+                                             },
+                                             {
+                                                "span":"at 9pm",
+                                                "className":"T.root",
+                                                "children":[
+                                                   {
+                                                      "span":"at",
+                                                      "className":"token",
+                                                      "children":[
+
+                                                      ]
+                                                   },
+                                                   {
+                                                      "span":"9pm",
+                                                      "className":"T.value",
+                                                      "children":[
+
+                                                      ]
+                                                   }
+                                                ]
+                                             }
+                                          ]
+                                       }
+                                    ]
+                                 }
+                              ]
+                           },
+                           {
+                              "span":"or",
+                              "className":"token",
+                              "children":[
+
+                              ]
+                           },
+                           {
+                              "span":"later",
+                              "className":"token",
+                              "children":[
+
+                              ]
+                           },
+                           {
+                              "span":"near Oakland",
+                              "className":"L.root",
+                              "children":[
+                                 {
+                                    "span":"near",
+                                    "className":"L.locqual",
+                                    "children":[
+
+                                    ]
+                                 },
+                                 {
+                                    "span":"Oakland",
+                                    "className":"L.place",
+                                    "children":[
+
+                                    ]
+                                 }
+                              ]
+                           }
+                        ]
+                     }
+                  ]
+               }
             ]
          },
          {
-            "span":"well",
+            "span":"?",
             "className":"token",
-            "children":[
-
-            ]
-         },
-         {
-            "span":"with",
-            "className":"token",
-            "children":[
-
-            ]
-         },
-         {
-            "span":"lasagne",
-            "className":"pairing_dish",
             "children":[
 
             ]
@@ -88,6 +210,7 @@ function submitSentence() {
   }
   // redraw everything
   var nodesList = [];
+  //var fullWidth = computeCoords(sentence_example, [], 0, 0, nodesList);
   var fullWidth = computeCoords(sentence, [], 0, 0, nodesList);
   d3.select("#taggingarea").remove();
   renderAgain(nodesList);
